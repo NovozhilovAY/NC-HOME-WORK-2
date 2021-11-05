@@ -5,9 +5,11 @@ import com.company.chapter2.Car;
 import com.company.chapter2.Point;
 import com.company.chapter3.Employee;
 import com.company.chapter3.Measurable;
+import com.company.chapter4.Circle;
+import com.company.chapter4.Line;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
         //Ex1.run();
         //Ex2.run();
@@ -35,6 +37,28 @@ public class Main {
 
         Measurable max = largest(employees);
         System.out.println("Employee with the largest salary - " + ((Employee) max).getName());
+
+        Point p1 = new Point(1,1);
+        Point p2 = new Point(2, 3);
+        Line line = new Line(p1, p2);
+        Line line2 = line.clone();
+
+
+        System.out.println(line);
+        System.out.println(line2);
+        System.out.println();
+        p1.setX(5);
+        p1.setY(5);
+        p2.setX(5);
+        p2.setY(5);
+        System.out.println(line);
+        System.out.println(line2);
+
+        Circle circle = new Circle(p1, 10);
+        Circle circle1 = circle.clone();
+
+
+
     }
 
     public static double average(Measurable[] objects) {
